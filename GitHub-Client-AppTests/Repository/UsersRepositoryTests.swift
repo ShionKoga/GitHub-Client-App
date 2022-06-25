@@ -22,8 +22,8 @@ class UserRepositoryTests: QuickSpec {
                     let jsonResponse = """
                        {
                             "items":[
-                                {"login": "userA"},
-                                {"login": "userB"},
+                                {"login": "userA", "avatar_url": "iconUrlA"},
+                                {"login": "userB", "avatar_url": "iconUrlB"},
                             ]
                        }
                        """
@@ -40,7 +40,9 @@ class UserRepositoryTests: QuickSpec {
                 
                 expect(users.count).to(equal(2))
                 expect(users.first?.userName).to(equal("userA"))
+                expect(users.first?.iconUrl).to(equal("iconUrlA"))
                 expect(users.last?.userName).to(equal("userB"))
+                expect(users.last?.iconUrl).to(equal("iconUrlB"))
             }
             
             it("searchUser passes correct argument to http") {

@@ -1,8 +1,10 @@
 import Foundation
 import BrightFutures
+import UIKit
 
 protocol UsersRepository {
     func searchUser(query: String) -> Future<[User], Error>
+    func getIcon(urlString: String) -> Future<UIImage, Error>
 }
 
 class GitHubUsersRepository: UsersRepository {
@@ -19,5 +21,9 @@ class GitHubUsersRepository: UsersRepository {
             .map { data in
                 return try! JSONDecoder().decode(GitHubApiResponse.self, from: data).items
             }
+    }
+    
+    func getIcon(urlString: String) -> Future<UIImage, Error> {
+        return Promise().future
     }
 }

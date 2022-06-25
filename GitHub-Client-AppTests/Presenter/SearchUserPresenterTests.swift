@@ -18,8 +18,8 @@ class SearchUserPresenterTests: QuickSpec {
             
             it("numberOfUsers returns users count") {
                 searchUserPresenter.users = [
-                    User(userName: ""),
-                    User(userName: ""),
+                    User(userName: "", iconUrl: ""),
+                    User(userName: "", iconUrl: ""),
                 ]
                 
                 expect(searchUserPresenter.numberOfUsers).to(equal(2))
@@ -27,8 +27,8 @@ class SearchUserPresenterTests: QuickSpec {
             
             it("userForRow returns Specified User") {
                 searchUserPresenter.users = [
-                    User(userName: "userA"),
-                    User(userName: "userB"),
+                    User(userName: "userA", iconUrl: ""),
+                    User(userName: "userB", iconUrl: ""),
                 ]
                 
                 expect(searchUserPresenter.user(forRow: 0)?.userName).to(equal("userA"))
@@ -42,7 +42,7 @@ class SearchUserPresenterTests: QuickSpec {
             
             it("hold usersRepository return value") {
                 let expectedUsers = [
-                    User(userName: "user name")
+                    User(userName: "user name", iconUrl: "")
                 ]
                 spyStubUsersRepository.searchUser_returnValue.success(expectedUsers)
                 

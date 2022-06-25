@@ -1,6 +1,7 @@
 import UIKit
 import Quick
 import Nimble
+import BrightFutures
 @testable import GitHub_Client_App
 
 class UsersTableViewCellTests: QuickSpec {
@@ -16,7 +17,7 @@ class UsersTableViewCellTests: QuickSpec {
             }
             
             it("desplays user name") {
-                let user = User(userName: "user name")
+                let user = User(userName: "user name", iconUrl: "")
                 usersTableViewCell.configure(user: user)
                 
                 
@@ -24,11 +25,31 @@ class UsersTableViewCellTests: QuickSpec {
             }
             
             it("desplays icon image") {
-                let user = User(userName: "")
+                let user = User(userName: "", iconUrl: "")
                 usersTableViewCell.configure(user: user)
                 
                 
                 expect(usersTableViewCell.imageView?.image).toNot(beNil())
+            }
+            
+            it("passes icon url to repository.getIcon") {
+                let user = User(userName: "", iconUrl: "https://exaple.com/icon")
+                usersTableViewCell.configure(user: user)
+                
+                
+                expect(spyStubUsersRepo.argument_getIcon_urlString).to(equal("https://exaple.com/icon"))
+            }
+            
+            it("updates iconImage when repository returns image") {
+                let expectedImage = UIImage()
+                spyStubUsersRepo.getIcon_returnValue.success(expectedImage)
+                
+                
+                let user = User(userName: "", iconUrl: "")
+                usersTableViewCell.configure(user: user)
+                
+                
+                expect(usersTableViewCell.imageView?.image).toEventually(equal(expectedImage))
             }
         }
     }

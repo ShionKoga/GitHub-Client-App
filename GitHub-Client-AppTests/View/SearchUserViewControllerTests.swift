@@ -41,8 +41,8 @@ class SearchUserViewControllerTests: QuickSpec {
             
             it("displays user names on tableView") {
                 spyStubPresenter.users = [
-                    User(userName: "userA"),
-                    User(userName: "userB"),
+                    User(userName: "userA", iconUrl: ""),
+                    User(userName: "userB", iconUrl: ""),
                 ]
                 
                 let tableView = searchUserVC.usersTableView!
