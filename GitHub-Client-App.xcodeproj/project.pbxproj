@@ -10,6 +10,8 @@
 		05735C7A2865E8D800CE4C35 /* NetworkHttpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05735C792865E8D800CE4C35 /* NetworkHttpTests.swift */; };
 		05735C7C2865EB2D00CE4C35 /* SpyStubNetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05735C7B2865EB2D00CE4C35 /* SpyStubNetworkSession.swift */; };
 		05735C7E2865EE1500CE4C35 /* SpySessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05735C7D2865EE1500CE4C35 /* SpySessionDataTask.swift */; };
+		05735C8628670A3600CE4C35 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05735C8528670A3600CE4C35 /* UIImage.swift */; };
+		05735C8828670A9100CE4C35 /* UsersTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05735C8728670A9100CE4C35 /* UsersTableViewCellTests.swift */; };
 		05805ED9285DF845002159E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05805ED8285DF845002159E2 /* AppDelegate.swift */; };
 		05805EDB285DF845002159E2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05805EDA285DF845002159E2 /* SceneDelegate.swift */; };
 		05805EDD285DF845002159E2 /* SearchUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05805EDC285DF845002159E2 /* SearchUserViewController.swift */; };
@@ -59,6 +61,8 @@
 		05735C792865E8D800CE4C35 /* NetworkHttpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHttpTests.swift; sourceTree = "<group>"; };
 		05735C7B2865EB2D00CE4C35 /* SpyStubNetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyStubNetworkSession.swift; sourceTree = "<group>"; };
 		05735C7D2865EE1500CE4C35 /* SpySessionDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpySessionDataTask.swift; sourceTree = "<group>"; };
+		05735C8528670A3600CE4C35 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		05735C8728670A9100CE4C35 /* UsersTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewCellTests.swift; sourceTree = "<group>"; };
 		05805ED5285DF845002159E2 /* GitHub-Client-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GitHub-Client-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		05805ED8285DF845002159E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05805EDA285DF845002159E2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				05805EEF285DF848002159E2 /* SearchUserViewControllerTests.swift */,
+				05735C8728670A9100CE4C35 /* UsersTableViewCellTests.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -250,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				05805F0E285E0BD1002159E2 /* UsersTableViewCell.swift */,
+				05735C8528670A3600CE4C35 /* UIImage.swift */,
 				05805EDC285DF845002159E2 /* SearchUserViewController.swift */,
 				05FDFA26285F1087009BCA08 /* UITableView+Reloadable.swift */,
 			);
@@ -407,6 +413,7 @@
 				05805F11285E0CE9002159E2 /* SearchUserPresenter.swift in Sources */,
 				05FDFA25285E3E3E009BCA08 /* User.swift in Sources */,
 				05FDFA19285E1660009BCA08 /* UsersRepository.swift in Sources */,
+				05735C8628670A3600CE4C35 /* UIImage.swift in Sources */,
 				05FDFA23285E3E20009BCA08 /* GitHubApiResponse.swift in Sources */,
 				05805EDB285DF845002159E2 /* SceneDelegate.swift in Sources */,
 			);
@@ -420,6 +427,7 @@
 				05805EF0285DF848002159E2 /* SearchUserViewControllerTests.swift in Sources */,
 				05FDFA312865C067009BCA08 /* SpyStubUsersRepository.swift in Sources */,
 				05FDFA2F2865BF4A009BCA08 /* SearchUserPresenterTests.swift in Sources */,
+				05735C8828670A9100CE4C35 /* UsersTableViewCellTests.swift in Sources */,
 				05A4F63D2865D091002B7FF3 /* SpyReloadable.swift in Sources */,
 				05FDFA2B285F138F009BCA08 /* SpyStubSearchUserPresenter.swift in Sources */,
 				05735C7C2865EB2D00CE4C35 /* SpyStubNetworkSession.swift in Sources */,

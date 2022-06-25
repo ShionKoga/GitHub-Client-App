@@ -62,8 +62,8 @@ extension SearchUserViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        guard let userName = searchUserPresenter.user(forRow: indexPath.row)?.userName else { return cell }
-        cell.configure(userName: userName)
+        guard let user = searchUserPresenter.user(forRow: indexPath.row) else { return cell }
+        cell.configure(user: user)
         return cell
     }
 }
