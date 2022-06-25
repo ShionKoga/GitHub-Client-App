@@ -24,6 +24,10 @@ class GitHubUsersRepository: UsersRepository {
     }
     
     func getIcon(urlString: String) -> Future<UIImage, Error> {
-        return Promise().future
+        return http
+            .get(urlString: urlString)
+            .map { imageData in
+                return UIImage(data: imageData)!
+            }
     }
 }
