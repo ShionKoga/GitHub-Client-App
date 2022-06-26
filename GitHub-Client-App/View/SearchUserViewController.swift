@@ -33,6 +33,7 @@ class SearchUserViewController: UIViewController {
     private func setupTableView() {
         usersTableView = UITableView(frame: view.frame)
         usersTableView.dataSource = self
+        usersTableView.delegate = self
         usersTableView.register(
             UsersTableViewCell.self,
             forCellReuseIdentifier: String(describing: UsersTableViewCell.self)
@@ -65,5 +66,11 @@ extension SearchUserViewController: UITableViewDataSource {
         guard let user = searchUserPresenter.user(forRow: indexPath.row) else { return cell }
         cell.configure(user: user)
         return cell
+    }
+}
+
+extension SearchUserViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        searchUserPresenter.didTapRow(at: indexPath)
     }
 }

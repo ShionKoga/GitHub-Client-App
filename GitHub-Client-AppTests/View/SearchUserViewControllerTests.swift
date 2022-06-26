@@ -41,8 +41,8 @@ class SearchUserViewControllerTests: QuickSpec {
             
             it("displays user names on tableView") {
                 spyStubPresenter.users = [
-                    User(userName: "userA", iconUrl: ""),
-                    User(userName: "userB", iconUrl: ""),
+                    User(userName: "userA", iconUrl: "http://example.com"),
+                    User(userName: "userB", iconUrl: "http://example.com"),
                 ]
                 
                 let tableView = searchUserVC.usersTableView!
@@ -63,6 +63,17 @@ class SearchUserViewControllerTests: QuickSpec {
             
             it("passes tableView to presenter") {
                 expect(spyStubPresenter.reloadable).to(beAKindOf(UITableView.self))
+            }
+            
+            it("calls presenter.didTapRow when tap tableview row") {
+                spyStubPresenter.users = [
+                    User(userName: "userA", iconUrl: "http://example.com"),
+                    User(userName: "userB", iconUrl: "http://example.com"),
+                ]
+                searchUserVC.usersTableView.delegate?.tableView?(searchUserVC.usersTableView, didSelectRowAt: IndexPath(row: 0, section: 0  ))
+                
+                
+                expect(spyStubPresenter.argument_didTapRow_at?.row).to(equal(0))
             }
         }
     }

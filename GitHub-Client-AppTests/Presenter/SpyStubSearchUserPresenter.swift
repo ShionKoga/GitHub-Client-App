@@ -18,4 +18,9 @@ class SpyStubSearchUserPresenter: SearchUserPresenter {
     func didTapSearchButton(text: String?) {
         didTapSearchButton_argument_text = text
     }
+    
+    private(set) var argument_didTapRow_at: IndexPath? = nil
+    func didTapRow(at indexPath: IndexPath) {
+        argument_didTapRow_at = indexPath
+    }
 }

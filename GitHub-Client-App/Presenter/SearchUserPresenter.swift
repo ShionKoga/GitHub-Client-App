@@ -5,6 +5,7 @@ protocol SearchUserPresenter {
     var numberOfUsers: Int { get }
     func user(forRow row: Int) -> User?
     func didTapSearchButton(text: String?)
+    func didTapRow(at indexPath: IndexPath)
 }
 
 class DefaultSearchUserPresenter: SearchUserPresenter {
@@ -36,5 +37,9 @@ class DefaultSearchUserPresenter: SearchUserPresenter {
                 self.users = users
                 self.reloadable?.reloadData()
             }
+    }
+    
+    func didTapRow(at indexPath: IndexPath) {
+        
     }
 }
