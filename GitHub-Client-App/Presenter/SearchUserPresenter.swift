@@ -13,6 +13,7 @@ class DefaultSearchUserPresenter: SearchUserPresenter {
     var users: [User] = []
     let usersRepository: UsersRepository
     var reloadable: Reloadable? = nil
+    var router: SearchUserRouter? = nil
     
     init(repository: UsersRepository) {
         self.usersRepository = repository
@@ -40,6 +41,7 @@ class DefaultSearchUserPresenter: SearchUserPresenter {
     }
     
     func didTapRow(at indexPath: IndexPath) {
-        
+        guard let user = user(forRow: indexPath.row) else { return }
+        router?.transitionToUserRepositories(userName: user.userName)
     }
 }

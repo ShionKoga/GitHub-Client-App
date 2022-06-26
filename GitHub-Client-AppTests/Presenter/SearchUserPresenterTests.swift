@@ -84,6 +84,18 @@ class SearchUserPresenterTests: QuickSpec {
                 
                 expect(spyReloadable.reloadData_wasCalled).toEventually(beTrue())
             }
+            
+            it("didTapRow passes userName to router.transitionToUserRepositories") {
+                let spySearchUserRouter = SpySearchUserRouter()
+                searchUserPresenter.router = spySearchUserRouter
+                searchUserPresenter.users = [
+                    UserBuilder().withUserName(newValue: "user name").build()
+                ]
+                
+                searchUserPresenter.didTapRow(at: IndexPath(row: 0, section: 0))
+                
+                expect(spySearchUserRouter.argument_transitionToUserRepositories).to(equal("user name"))
+            }
         }
     }
 }

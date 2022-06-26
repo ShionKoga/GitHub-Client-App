@@ -13,6 +13,8 @@
 		05735C8628670A3600CE4C35 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05735C8528670A3600CE4C35 /* UIImage.swift */; };
 		05735C8828670A9100CE4C35 /* UsersTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05735C8728670A9100CE4C35 /* UsersTableViewCellTests.swift */; };
 		05735C8E2868517F00CE4C35 /* UserBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05735C8D2868517F00CE4C35 /* UserBuilder.swift */; };
+		05735C912868568800CE4C35 /* SearchUserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05735C902868568800CE4C35 /* SearchUserRouter.swift */; };
+		05735C942868571100CE4C35 /* SpyUserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05735C932868571100CE4C35 /* SpyUserRouter.swift */; };
 		05805ED9285DF845002159E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05805ED8285DF845002159E2 /* AppDelegate.swift */; };
 		05805EDB285DF845002159E2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05805EDA285DF845002159E2 /* SceneDelegate.swift */; };
 		05805EDD285DF845002159E2 /* SearchUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05805EDC285DF845002159E2 /* SearchUserViewController.swift */; };
@@ -65,6 +67,8 @@
 		05735C8528670A3600CE4C35 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		05735C8728670A9100CE4C35 /* UsersTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewCellTests.swift; sourceTree = "<group>"; };
 		05735C8D2868517F00CE4C35 /* UserBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBuilder.swift; sourceTree = "<group>"; };
+		05735C902868568800CE4C35 /* SearchUserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserRouter.swift; sourceTree = "<group>"; };
+		05735C932868571100CE4C35 /* SpyUserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyUserRouter.swift; sourceTree = "<group>"; };
 		05805ED5285DF845002159E2 /* GitHub-Client-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GitHub-Client-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		05805ED8285DF845002159E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05805EDA285DF845002159E2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -178,6 +182,22 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		05735C8F2868566900CE4C35 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				05735C902868568800CE4C35 /* SearchUserRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		05735C922868570100CE4C35 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				05735C932868571100CE4C35 /* SpyUserRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		05805ECC285DF845002159E2 = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +221,7 @@
 		05805ED7285DF845002159E2 /* GitHub-Client-App */ = {
 			isa = PBXGroup;
 			children = (
+				05735C8F2868566900CE4C35 /* Router */,
 				05735C842866F66300CE4C35 /* Networking */,
 				05735C832866F65000CE4C35 /* Entity */,
 				05FDFA1C285E1691009BCA08 /* View */,
@@ -218,6 +239,7 @@
 		05805EEE285DF848002159E2 /* GitHub-Client-AppTests */ = {
 			isa = PBXGroup;
 			children = (
+				05735C922868570100CE4C35 /* Router */,
 				05735C822866F61300CE4C35 /* Networking */,
 				05735C812866F5C400CE4C35 /* Repository */,
 				05735C802866F59E00CE4C35 /* Presenter */,
@@ -418,6 +440,7 @@
 				05FDFA19285E1660009BCA08 /* UsersRepository.swift in Sources */,
 				05735C8628670A3600CE4C35 /* UIImage.swift in Sources */,
 				05FDFA23285E3E20009BCA08 /* GitHubApiResponse.swift in Sources */,
+				05735C912868568800CE4C35 /* SearchUserRouter.swift in Sources */,
 				05805EDB285DF845002159E2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,6 +461,7 @@
 				05735C7A2865E8D800CE4C35 /* NetworkHttpTests.swift in Sources */,
 				05A4F63F2865D44E002B7FF3 /* UsersRepositoryTests.swift in Sources */,
 				05735C7E2865EE1500CE4C35 /* SpySessionDataTask.swift in Sources */,
+				05735C942868571100CE4C35 /* SpyUserRouter.swift in Sources */,
 				05735C8E2868517F00CE4C35 /* UserBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
