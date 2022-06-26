@@ -17,7 +17,7 @@ class UsersTableViewCellTests: QuickSpec {
             }
             
             it("desplays user name") {
-                let user = User(userName: "user name", iconUrl: "")
+                let user = UserBuilder().withUserName(newValue: "user name").build()
                 usersTableViewCell.configure(user: user)
                 
                 
@@ -25,7 +25,7 @@ class UsersTableViewCellTests: QuickSpec {
             }
             
             it("desplays icon image") {
-                let user = User(userName: "", iconUrl: "")
+                let user = UserBuilder().build()
                 usersTableViewCell.configure(user: user)
                 
                 
@@ -33,11 +33,11 @@ class UsersTableViewCellTests: QuickSpec {
             }
             
             it("passes icon url to repository.getIcon") {
-                let user = User(userName: "", iconUrl: "https://exaple.com/icon")
+                let user = UserBuilder().withIconUrl(newValue: "https://example.com/icon").build()
                 usersTableViewCell.configure(user: user)
                 
                 
-                expect(spyStubUsersRepo.argument_getIcon_urlString).to(equal("https://exaple.com/icon"))
+                expect(spyStubUsersRepo.argument_getIcon_urlString).to(equal("https://example.com/icon"))
             }
             
             it("updates iconImage when repository returns image") {
@@ -45,7 +45,7 @@ class UsersTableViewCellTests: QuickSpec {
                 spyStubUsersRepo.getIcon_returnValue.success(expectedImage)
                 
                 
-                let user = User(userName: "", iconUrl: "")
+                let user = UserBuilder().build()
                 usersTableViewCell.configure(user: user)
                 
                 
